@@ -1,0 +1,48 @@
+﻿@model SportsWebASP.NetCoreAPP.Models.Player
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Player</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Postition)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Postition)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TeamObj)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TeamObj.TeamId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DivisionObj)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DivisionObj.DivisionId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SportObj)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SportObj.SportId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PlayerId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SportsWebASP.NetCoreAPP.Models.Player>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Players</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Postition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamObj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DivisionObj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SportObj)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Postition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeamObj.TeamId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DivisionObj.DivisionId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SportObj.SportId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PlayerId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PlayerId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PlayerId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
